@@ -83,13 +83,13 @@ int main () {
 
 	//calling kernal
 
-	dim3 dimGrid ( W/T_W , W/T_W ,1 ) ;
+	dim3 dimBlock ( W/T_W , W/T_W ,1 ) ;
 
-	dim3 dimBlock( T_W, T_W, 1 ) ;
+	dim3 dimThread ( T_W, T_W, 1 ) ;
 
 #if 1
 
-MatrixMulSh<<<dimGrid,dimBlock>>> ( array1_d , array2_d ,M_result_array_d , W) ;
+MatrixMulSh<<<dimBlock,dimThread>>> ( array1_d , array2_d ,M_result_array_d , W) ;
 
 #endif
 
